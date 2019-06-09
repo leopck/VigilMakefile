@@ -50,11 +50,13 @@ function executeMakefile(projectPath) {
   });
   dir.on('exit', function (code) {
     // exit code is code
+    console.log("Exit!");
+    
   });
 }
 
 function generateMakefile(makePath){
-  fs.appendFile(makePath, 'all: \n echo "Stanley"', function (err) {
+  fs.appendFile(makePath, 'all: \n echo "Success!"', function (err) {
     if (err) throw err;
     console.log('Saved!');
     fs.chmodSync(makePath, '755');
@@ -112,7 +114,7 @@ watcher
   .on('addDir', projectPath => registerMakefile(projectPath, `${projectPath}/Makefile`))
   .on('unlinkDir', projectPath => unregisterMakefile(projectPath, `${projectPath}/Makefile`))
   .on('error', error => runMakefile('error', `Watcher error: ${error}`))
-  .on('ready', () => setReady('Initial scan complete. Ready for changes'))
-  .on('raw', (event, projectRootPath, details) => {
-    log('Raw event info:', event, projectRootPath, details);
-  });
+  .on('ready', () => setReady('Initial scan complete. Ready for changes'));
+  // .on('raw', (event, projectRootPath, details) => {
+  //   log('Raw event info:', event, projectRootPath, details);
+  // });
