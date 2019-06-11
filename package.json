@@ -1,0 +1,27 @@
+{
+  "name": "makefilewatchdog",
+  "version": "1.0.0",
+  "description": "A WatchDog that runs Makefile at every change",
+  "main": "main.js",
+  "dependencies": {
+    "chokidar": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leopck/makefile-watchdog.git"
+  },
+  "keywords": [
+    "makefile",
+    "watchdog"
+  ],
+  "author": "leopck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leopck/makefile-watchdog/issues"
+  },
+  "homepage": "https://github.com/leopck/makefile-watchdog#readme"
+}
